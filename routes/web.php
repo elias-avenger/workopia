@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobController;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/walbong', function (){
-    $url = route('home');
-    return "<a href='$url'>Home</a><h1>Hello, Walbong!</h1> Walbong is a the busiest place in Laroo!";
-});
+Route::get('/jobs', [JobController::class, 'index']);
+
+Route::get('/jobs/create', [JobController::class, 'create']);
+
+Route::get('/jobs/show', [JobController::class, 'show']);
