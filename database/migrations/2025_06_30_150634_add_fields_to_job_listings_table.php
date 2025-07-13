@@ -47,7 +47,24 @@ return new class extends Migration
         Schema::table('job_listings', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropColumn('user_id');
-            $table->dropColumn(['salary', 'tags', 'job_type', 'remote', 'requirements', 'benefits', 'address', 'city', 'state', 'zipcode', 'contact_email', 'contact_phone', 'company_name', 'company_description', 'company_logo', 'company_website']);
+            $table->dropColumn([
+                'salary',
+                'tags',
+                'job_type',
+                'remote', 
+                'requirements', 
+                'benefits', 
+                'address', 
+                'city', 
+                'state', 
+                'zipcode', 
+                'contact_email', 
+                'contact_phone', 
+                'company_name', 
+                'company_description', 
+                'company_logo', 
+                'company_website',
+            ]);
         });
     }
 };
